@@ -172,5 +172,17 @@ namespace Enumify.Net.Test
         {
             Assert.True(Enums.IsDefined<Number>(1));
         }
+
+        [Fact]
+        public void IsDefinedAsLong()
+        {
+            Assert.True(Enums.IsDefined<Int64Enum>(0x7FFFFFFFFFFFFFFF));
+        }
+
+        [Fact]
+        public void IsDefinedAsByte()
+        {
+            Assert.True(Enums.IsDefined<ByteEnum>(1));
+        }
     }
 }
