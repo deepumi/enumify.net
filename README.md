@@ -3,11 +3,12 @@ A lightweight type safety library for enum type values and description.
 
 ## Nuget
 Install [Enumify.Net](https://www.nuget.org/packages/Enumify.Net/) via [Nuget](https://www.nuget.org/packages/Enumify.Net/)
+
 ```csharp
 PM> Install-Package Enumify.Net
+```
 
 ## API usage
-
 ```csharp
 //Convert a string value to enum type.
 DayOfWeek saturday = Enums.Parse<DayOfWeek>("Saturday");
