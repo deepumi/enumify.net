@@ -2,7 +2,7 @@
 
 namespace Enumify.Net.Test
 {
-    enum Number
+    public enum Number
     {
         [EnumDescription("First description")]
         One = 1,
