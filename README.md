@@ -81,7 +81,7 @@ public enum Number
 ```
 
 ## Benchmark
-Thanks to [BenchmarDotNet library] (https://github.com/dotnet/BenchmarkDotNet).
+Thanks to [Benchmark DotNet library](https://github.com/dotnet/BenchmarkDotNet).
 
 #### Get Values
 
