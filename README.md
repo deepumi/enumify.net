@@ -80,4 +80,30 @@ public enum Number
  
 ```
 
+## Benchmark
+Thanks to [BenchmarDotNet library] (https://github.com/dotnet/BenchmarkDotNet).
+
+#### Get Values
+
+|        Method |        Mean |      Error |     StdDev | Rank |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|-------------- |------------:|-----------:|-----------:|-----:|-------:|------:|------:|----------:|
+| EnumifyDotNet |   0.0000 ns |  0.0000 ns |  0.0000 ns |    1 |      - |     - |     - |         - |
+|        DotNet | 855.3133 ns | 16.9984 ns | 42.0158 ns |    2 | 0.0534 |     - |     - |     224 B |
+
+
+#### Get Names
+
+|        Method |       Mean |     Error |    StdDev |     Median | Rank |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|-------------- |-----------:|----------:|----------:|-----------:|-----:|-------:|------:|------:|----------:|
+| EnumifyDotNet |  0.4590 ns | 0.2194 ns | 0.6468 ns |  0.0000 ns |    1 |      - |     - |     - |         - |
+|        DotNet | 57.0122 ns | 2.0174 ns | 5.7884 ns | 56.0215 ns |    2 | 0.0191 |     - |     - |      80 B |
+
+#### Parse String
+
+|     Method |      Mean |     Error |    StdDev |   Median | Rank | Gen 0 | Gen 1 | Gen 2 | Allocated |
+|----------- |----------:|----------:|----------:|---------:|-----:|------:|------:|------:|----------:|
+|    Enumify |  89.66 ns |  1.873 ns |  4.766 ns | 89.68 ns |    1 |     - |     - |     - |         - |
+| DotNet     | 110.80 ns | 14.266 ns | 42.062 ns | 85.87 ns |    1 |     - |     - |     - |         - |
+
+
 Please check out more samples in the [Unit test app](https://github.com/deepumi/enumify.net/blob/deepumi-readme-update/Enumify.Net.Test/EnumTest.cs).
