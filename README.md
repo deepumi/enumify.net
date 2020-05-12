@@ -8,6 +8,11 @@ Install [Enumify.Net](https://www.nuget.org/packages/Enumify.Net/) via [Nuget](h
 PM> Install-Package Enumify.Net
 ```
 
+## Platform Support
+*  netstandard 2.1, netstandard 2.0
+*  netcoreapp 3.1, netcoreapp 3.0, netcoreapp 2.2, netcoreapp 2.1, netcoreapp 2.0, 
+*  NetFramework 4.8.0
+
 ## API usage
 ```csharp
 
