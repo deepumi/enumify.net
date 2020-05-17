@@ -14,22 +14,32 @@ PM> Install-Package Enumify.Net
 *  NetFramework 4.8.0
 
 ## API usage
+
+#### Convert a string value to enum type.
 ```csharp
-
-//Convert a string value to enum type.
 DayOfWeek saturday = Enums.Parse<DayOfWeek>("Saturday");
+```
 
-//Get Values
+#### Get Values
+```csharp
 IList<DayOfWeek> values = Enums.GetValues<DayOfWeek>();
+```
 
-//Get Names
+#### Get Names
+```csharp
 IList<string> names = Enums.GetNames<DayOfWeek>();
+```
 
-//Get Name
+#### Get Name
+```csharp
 string name = DayOfWeek.Saturday.GetName();
+```
 
-//Parses an enum from a string.
+#### Parses an enum from a string.
+
+```csharp
 bool result = Enums.TryParse("Saturday", out DayOfWeek day);
+
 
 Assert.True(Enums.TryParse("One", out Number number));
 Assert.Equal(Number.One, number);
@@ -39,17 +49,23 @@ Assert.Equal((Number)0, number);
 
 Assert.False(Enums.TryParse("foo", out number));
 Assert.Equal((Number)0, number);
+```
 
-//Returns Boolean whether a specified enum name exist in the enum type.
+#### Returns boolean whether a specified enum name exist in the given enum type.
+```csharp
 bool isDefinedAsString = Enums.IsDefined<Number>("One");
 bool isDefinedAsInt = Enums.IsDefined<Number>(1);
 bool isDefinedAsLong = Enums.IsDefined<Int64Enum>(0x7FFFFFFFFFFFFFFF);
 bool isDefinedAsByte = Enums.IsDefined<ByteEnum>(1);
+```
 
-//Get Enum Description.
+#### Get Enum Description
+```csharp
 string desc = Number.One.GetDescription();
+```
 
-//Parse Enum Description.
+#### Parse Enum Description.
+```csharp
 bool result = Enums.TryParseDescription("Third description", out Number number);
  
 
@@ -71,8 +87,10 @@ public enum Number
      Zero = 0,
      Max = 0x7FFFFFFFFFFFFFFF
  }
+ ```
  
- //Get underlying type.
+ #### Get underlying type.
+ ```csharp
  Assert.Equal(typeof(byte), Enums.GetUnderlyingType<ByteEnum>());
  Assert.Equal(typeof(int), Enums.GetUnderlyingType<Number>());
  Assert.Equal(typeof(long), Enums.GetUnderlyingType<Int64Enum>());
